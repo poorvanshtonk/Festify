@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festify Admin Dashboard</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/admin-dashboard.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+
+  <body>
+    <!-- Shared Navbar -->
+    <%- include('partials/header') %>
+
+    <main class="admin-dashboard">
+      <div class="admin-header">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p class="subtitle">Manage your Festify store and festival content</p>
+        </div>
+        <button class="settings-btn">
+          <i class="fa-solid fa-gear"></i> Settings
+        </button>
+      </div>
+
+      <!-- Stats Overview -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <i class="fa-solid fa-box"></i>
+          <div>
+            <h3>Total Products</h3>
+            <p>356</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div>
+            <h3>Total Orders</h3>
+            <p>1,234</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <div>
+            <h3>Total Revenue</h3>
+            <p>₹12.5L</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <h3>Active Users</h3>
+            <p>567</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Management Sections -->
+      <section class="admin-section">
+        <h2>Product Management</h2>
+        <div class="section-header">
+          <p>View and manage your product listings.</p>
+          <button class="add-btn"><i class="fa-solid fa-plus"></i> Add Product</button>
+        </div>
+
+        <div class="product-list">
+          <div class="product-card">
+            <img src="/images/diyas.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <h4>Diwali Diyas</h4>
+              <p>Category: Home Decor</p>
+              <p>Price: ₹199</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/images/colours.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <h4>Holi Colors Pack</h4>
+              <p>Category: Festival Items</p>
+              <p>Price: ₹249</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="/images/tree.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <h4>Christmas Tree</h4>
+              <p>Category: Decorations</p>
+              <p>Price: ₹799</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section">
+        <h2>User Management</h2>
+        <div class="user-list">
+          <div class="user-card">
+            <div class="user-info">
+              <i class="fa-solid fa-user-circle"></i>
+              <div>
+                <h4>John Doe</h4>
+                <p>Admin</p>
+              </div>
+            </div>
+            <button class="manage-btn">Manage</button>
+          </div>
+
+          <div class="user-card">
+            <div class="user-info">
+              <i class="fa-solid fa-user-circle"></i>
+              <div>
+                <h4>Jane Smith</h4>
+                <p>Customer</p>
+              </div>
+            </div>
+            <button class="manage-btn">Manage</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Shared Footer -->
+    <%- include('partials/footer') %>
+  </body>
+</html>
