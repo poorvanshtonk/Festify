@@ -37,6 +37,12 @@ app.get('/admin', (req, res) => {
   res.render('admin');
 });
 
+// ✅ Profile Route
+app.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
+
 // ==========================
 //  SERVER START
 // ==========================

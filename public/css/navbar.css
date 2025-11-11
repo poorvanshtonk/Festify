@@ -1,6 +1,4 @@
 /* ---------------------- HEADER (NAVBAR) ---------------------- */
-
-/* General header setup */
 header {
   position: sticky;
   top: 0;
@@ -17,7 +15,7 @@ header:hover {
   background-color: rgba(255, 255, 255, 1);
 }
 
-/* Top navbar layout */
+/* Navbar layout */
 .navbar {
   height: 65px;
   display: flex;
@@ -27,7 +25,7 @@ header:hover {
   font-family: "Inter", sans-serif;
 }
 
-/* ---------------- LOGO ---------------- */
+/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -56,6 +54,7 @@ header:hover {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: relative;
   cursor: pointer;
 }
 
@@ -81,6 +80,16 @@ header:hover {
   font-size: 15px;
   font-weight: 500;
   margin: 0;
+}
+
+.edit-icon {
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.address-container:hover .edit-icon {
+  color: #c41e3a;
 }
 
 /* ---------------- SEARCH BAR ---------------- */
@@ -143,6 +152,49 @@ header:hover {
   transform: scale(1.2);
 }
 
+/* ---------------- DROPDOWN MENUS ---------------- */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 20;
+}
+
+.dropdown-menu a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #fff4f4;
+  color: #c41e3a;
+}
+
+.dropdown-menu .logout {
+  color: #c41e3a;
+  font-weight: 600;
+}
+
+/* When .open is added (by JS) */
+.dropdown-container.open .dropdown-menu {
+  display: flex;
+}
+
 /* ---------------- SECOND NAVBAR (Categories) ---------------- */
 .navbar2 {
   display: flex;
@@ -187,4 +239,112 @@ header:hover {
 .dropdown select:hover {
   background-color: #fff5f5;
   transform: scale(1.03);
+}
+
+/* ---------------- ADDRESS MODAL ---------------- */
+.address-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.address-modal.active {
+  display: flex;
+}
+
+.address-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.address-modal-inner {
+  position: relative;
+  background: #fff;
+  width: min(500px, 90%);
+  border-radius: 12px;
+  padding: 24px;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.address-input {
+  width: 93%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.saved-addresses-title {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.saved-addresses {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.saved-btn {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.saved-btn:hover {
+  background-color: #fff4f4;
+}
+
+.confirm-location-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #c41e3a, #d6b43f);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.confirm-location-btn:hover {
+  transform: scale(1.02);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 992px) {
+  .search-container {
+    width: 300px;
+  }
+
+  .navbar2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 }

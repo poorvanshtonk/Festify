@@ -1,0 +1,352 @@
+
+
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.profile-page {
+  padding: 40px 60px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2.5rem;
+}
+
+/* ==========================================================
+   SIDEBAR SECTION
+   ========================================================== */
+.sidebar {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: url("/images/profile-placeholder.png") center/cover no-repeat, #f0f0f0;
+  margin-bottom: 1rem;
+  border: 3px solid #f05f57;
+}
+
+.profile-card h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.email {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #c41e3a, #f05f57);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 5px 12px;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.logout-btn,
+.admin-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover,
+.admin-btn:hover {
+  border-color: #c41e3a;
+  color: #c41e3a;
+  background-color: #fff5f6;
+}
+
+/* ==========================================================
+   MAIN CONTENT AREA
+   ========================================================== */
+.content {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding: 8px 0;
+}
+
+.tab i {
+  margin-right: 6px;
+  color: #c41e3a;
+}
+
+.tab.active,
+.tab:hover {
+  color: #c41e3a;
+  border-bottom: 2px solid #c41e3a;
+}
+
+/* ---------- Orders ---------- */
+.tab-content h3 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 18px;
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffdfd;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.order-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.order-info h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.order-info p {
+  font-size: 14px;
+  color: #777;
+  margin: 2px 0;
+}
+
+.order-status {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.order-status.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.order-status.transit {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.order-status.processing {
+  background: #cce5ff;
+  color: #004085;
+}
+
+/* ---------- Profile Form ---------- */
+.profile-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.profile-form label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.save-btn {
+  grid-column: span 2;
+  background: linear-gradient(90deg, #c41e3a, #f05f57);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Addresses ---------- */
+.address-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.address-card h4 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.address-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 3px 0;
+}
+
+.address-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.address-actions button {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.address-actions button:hover {
+  border-color: #c41e3a;
+  color: #c41e3a;
+}
+
+.add-address-btn {
+  border: none;
+  background: linear-gradient(90deg, #c41e3a, #f05f57);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ---------- Wishlist ---------- */
+.wishlist-empty {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.wishlist-empty i {
+  font-size: 60px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.wishlist-empty p {
+  color: #777;
+  font-size: 15px;
+}
+
+.browse-btn {
+  border: 1px solid #c41e3a;
+  background: #fff;
+  color: #c41e3a;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.browse-btn:hover {
+  background: #fff5f5;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-page {
+    padding: 20px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .save-btn {
+    grid-column: span 1;
+  }
+}

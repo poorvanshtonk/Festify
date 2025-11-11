@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festify | User Profile</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ✅ Include Navbar -->
+    <%- include('partials/header') %>
+
+    <!-- ========================= MAIN CONTENT ========================= -->
+    <main class="profile-page">
+      <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+          <div class="profile-card">
+            <div class="avatar"></div>
+            <h2>John Doe</h2>
+            <p class="email">john@example.com</p>
+            <span class="badge">Customer</span>
+            <div class="sidebar-buttons">
+              <button class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+              </button>
+              <a href="/admin" class="admin-btn">
+                <i class="fa-solid fa-gear"></i> Admin Dashboard
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Profile Area -->
+        <section class="content">
+          <!-- Tabs -->
+          <div class="tabs">
+            <button class="tab active">
+              <i class="fa-solid fa-box"></i> Orders
+            </button>
+            <button class="tab">
+              <i class="fa-solid fa-user"></i> Profile
+            </button>
+            <button class="tab">
+              <i class="fa-solid fa-location-dot"></i> Addresses
+            </button>
+            <button class="tab">
+              <i class="fa-solid fa-heart"></i> Wishlist
+            </button>
+          </div>
+
+          <!-- Orders Section -->
+          <div class="tab-content active">
+            <h3>Order History</h3>
+
+            <div class="order-card">
+              <div class="order-info">
+                <h4>Order #ORD001</h4>
+                <p>Placed on October 15, 2025</p>
+                <p>2 items • ₹4,999</p>
+              </div>
+              <div class="order-status delivered">Delivered</div>
+            </div>
+
+            <div class="order-card">
+              <div class="order-info">
+                <h4>Order #ORD002</h4>
+                <p>Placed on October 28, 2025</p>
+                <p>3 items • ₹8,499</p>
+              </div>
+              <div class="order-status transit">In Transit</div>
+            </div>
+
+            <div class="order-card">
+              <div class="order-info">
+                <h4>Order #ORD003</h4>
+                <p>Placed on November 1, 2025</p>
+                <p>1 item • ₹2,999</p>
+              </div>
+              <div class="order-status processing">Processing</div>
+            </div>
+          </div>
+
+          <!-- Profile Section -->
+          <div class="tab-content">
+            <h3>Personal Information</h3>
+            <form class="profile-form">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" value="John" />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" value="Doe" />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="john@example.com" />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" placeholder="+91 9876543210" />
+              </div>
+              <button type="button" class="save-btn">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Addresses Section -->
+          <div class="tab-content">
+            <h3>Saved Addresses</h3>
+            <div class="address-card">
+              <h4>Home</h4>
+              <p>123 Main Street, Andheri West, Mumbai</p>
+              <p>Maharashtra 400053, India</p>
+              <div class="address-actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+            <button class="add-address-btn">Add New Address</button>
+          </div>
+
+          <!-- Wishlist Section -->
+          <div class="tab-content">
+            <h3>My Wishlist</h3>
+            <div class="wishlist-empty">
+              <i class="fa-regular fa-heart"></i>
+              <p>Your wishlist is empty.</p>
+              <button class="browse-btn">Browse Products</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ✅ Include Footer -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

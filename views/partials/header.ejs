@@ -1,19 +1,23 @@
 <header>
   <!-- Top Navbar -->
   <div class="navbar">
+    <!-- Logo Section -->
     <div class="nav-logo">
       <div class="logo"></div>
       <p class="nameF">Festify</p>
     </div>
 
-    <div class="address-container">
+    <!-- Address Section -->
+    <div class="address-container" id="addressTrigger">
       <i class="fa-solid fa-location-dot"></i>
       <div class="address-text">
         <p class="line-1">Deliver to</p>
-        <p class="line-2">Mumbai, 400001</p>
+        <p class="line-2" id="current-location">Mumbai, 400001</p>
       </div>
+      <i class="fa-solid fa-pen edit-icon"></i>
     </div>
 
+    <!-- Search Bar -->
     <div class="search-container">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input
@@ -22,10 +26,31 @@
       />
     </div>
 
+    <!-- Right Icons Section -->
     <div class="icons-container">
+      <!-- Cart -->
       <a href="/cart" title="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="/profile" title="Profile"><i class="fa-solid fa-user"></i></a>
-      <a href="/admin" title="Admin Dashboard"><i class="fa-solid fa-gear"></i></a>
+
+      <!-- User Dropdown -->
+      <div class="dropdown-container" id="userDropdown">
+        <i class="fa-solid fa-user"></i>
+        <div class="dropdown-menu">
+          <a href="/profile">My Profile</a>
+          <a href="/orders">My Orders</a>
+          <a href="/login">Login / Signup</a>
+          <a href="#" class="logout">Logout</a>
+        </div>
+      </div>
+
+      <!-- Settings Dropdown -->
+      <div class="dropdown-container" id="settingsDropdown">
+        <i class="fa-solid fa-gear"></i>
+        <div class="dropdown-menu">
+          <a href="/about">About Festify</a>
+          <a href="/help">Help Center</a>
+          <a href="/admin">Admin Dashboard</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -56,3 +81,24 @@
     </div>
   </div>
 </header>
+
+<!-- ==================== Address Modal ==================== -->
+<div id="addressModal" class="address-modal">
+  <div class="address-modal-inner">
+    <button class="modal-close">&times;</button>
+    <h3>Update Delivery Location</h3>
+
+    <label for="addressInput" class="modal-label">Enter your pincode or location</label>
+    <input id="addressInput" type="text" value="Mumbai, 400001" class="address-input" />
+
+    <p class="saved-addresses-title">Saved Addresses</p>
+    <ul class="saved-addresses">
+      <li><button class="saved-btn">Mumbai, 400001</button></li>
+      <li><button class="saved-btn">Delhi, 110001</button></li>
+      <li><button class="saved-btn">Bangalore, 560001</button></li>
+    </ul>
+
+    <button class="confirm-location-btn">Confirm Location</button>
+  </div>
+  <div class="address-modal-backdrop"></div>
+</div>
