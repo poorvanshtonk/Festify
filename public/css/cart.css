@@ -1,0 +1,270 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* =====================
+   CART PAGE
+===================== */
+.cart-section h1 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.cart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.cart-items {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.item-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.item-details h3 {
+  cursor: pointer;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.item-details h3:hover {
+  text-decoration: underline;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.old-price {
+  color: gray;
+  text-decoration: line-through;
+  font-size: 0.9em;
+}
+
+.item-controls {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover i {
+  transform: scale(1.1);
+}
+
+.icon-btn.delete i {
+  color: red;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.order-summary {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.summary-row.discount {
+  color: green;
+}
+
+.summary-row.total span:last-child {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.shop-btn,
+.checkout-btn {
+  color: white;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.festival-banner {
+  margin-top: 1rem;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* =====================
+   EMPTY CART
+===================== */
+.empty-cart {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+}
+
+.free-note {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* =====================
+   SUGGESTED PRODUCTS
+===================== */
+.suggested-section {
+  margin-top: 3rem;
+}
+
+.suggested-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.suggested-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.suggested-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.suggested-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+  display: block;
+}
+
+.suggested-card h4 {
+  margin: 10px 0 4px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.suggested-card p {
+  margin-bottom: 12px;
+  color: #444;
+  font-weight: 500;
+}
+
+.suggested-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================
+   RESPONSIVE DESIGN
+===================== */
+@media (max-width: 992px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-img img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .item-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .order-summary {
+    position: static;
+  }
+}

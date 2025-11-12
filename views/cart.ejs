@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festify | Cart</title>
+  <link rel="stylesheet" href="/css/cart.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+ <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+</head>
+<body>
+  <!-- HEADER -->
+  <%- include('partials/header') %>
+
+  <!-- CART SECTION -->
+  <section class="cart-section">
+    <div class="container">
+      <!-- Empty Cart Example -->
+      <div class="empty-cart" id="empty-cart">
+        <i class="lucide-shopping-bag empty-icon"></i>
+        <h2>Your Cart is Empty</h2>
+        <p>Looks like you haven't added anything to your cart yet</p>
+        <a href="/shop" class="btn shop-btn">Start Shopping →</a>
+      </div>
+
+      <!-- Active Cart Example -->
+      <div class="cart-grid" id="active-cart">
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="item-img">
+              <img src="/images/dlamp.jpeg" alt="Sample Product">
+            </div>
+            <div class="item-details">
+              <h3>Diwali Lamp Set</h3>
+              <p class="brand">Festify Decor</p>
+              <div class="price-row">
+                <span class="price">₹899</span>
+                <span class="old-price">₹999</span>
+              </div>
+            </div>
+            <div class="item-controls">
+              <button class="icon-btn delete"><i class="lucide-trash-2"></i></button>
+              <div class="quantity-controls">
+                <button class="icon-btn"><i class="lucide-minus"></i></button>
+                <span>1</span>
+                <button class="icon-btn"><i class="lucide-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span><span>₹899</span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery Fee</span><span>₹99</span>
+          </div>
+          <div class="summary-row discount">
+            <span>Festival Discount</span><span>-₹90</span>
+          </div>
+          <hr />
+          <div class="summary-row total">
+            <span>Total</span><span>₹908</span>
+          </div>
+          <a href="/checkout" class="btn checkout-btn">Proceed to Checkout →</a>
+          <p class="free-note">Add ₹101 more for FREE delivery</p>
+          <div class="festival-banner">
+            <p>🪔 Diwali Special: Extra 10% Off Applied!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Products -->
+      <div class="suggested-section">
+        <h2>You May Also Like</h2>
+        <div class="suggested-grid">
+          <div class="suggested-card">
+            <img src="/images/ddiyas.jpeg" alt="Product 1">
+            <h4>Festive Diyas Pack</h4>
+            <p>₹299</p>
+          </div>
+          <div class="suggested-card">
+            <img src="/images/clight.jpeg" alt="Product 2">
+            <h4>Decor String Lights</h4>
+            <p>₹499</p>
+          </div>
+          <div class="suggested-card">
+            <img src="/images/rcolours.jpeg" alt="Product 3">
+            <h4>Rangoli Powder Kit</h4>
+            <p>₹399</p>
+          </div>
+          <div class="suggested-card">
+            <img src="/images/acandles.jpeg" alt="Product 4">
+            <h4>Festive Aroma Candles</h4>
+            <p>₹699</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <%- include('partials/footer') %>
+</body>
+</html>
