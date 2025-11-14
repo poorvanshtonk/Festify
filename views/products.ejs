@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festify | User Profile</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ✅ Include Navbar -->
+    <%- include('partials/header') %>
+
+<div class="page-wrapper">
+
+  <div class="container">
+
+    <div class="layout">
+
+      <!-- ================= SIDE FILTERS (DESKTOP) ================= -->
+      <aside class="sidebar">
+        <div class="sticky">
+
+          <!-- Categories -->
+          <h3 class="filter-title"><i class="ri-filter-3-line"></i> Categories</h3>
+          <div class="filter-box">
+            <label><input type="checkbox"> Lights</label>
+            <label><input type="checkbox"> Colors</label>
+            <label><input type="checkbox"> Decorations</label>
+            <label><input type="checkbox"> Essentials</label>
+          </div>
+
+          <hr>
+
+          <!-- Price -->
+          <h3 class="filter-title">Price Range</h3>
+          <input type="range" min="0" max="20000" class="price-slider">
+          <div class="price-values">
+            <span>₹0</span>
+            <span>₹20,000</span>
+          </div>
+
+          <hr>
+
+          <!-- Rating -->
+          <h3 class="filter-title">Minimum Rating</h3>
+          <div class="filter-box">
+            <label><input type="checkbox"> 4★ & above</label>
+            <label><input type="checkbox"> 3★ & above</label>
+            <label><input type="checkbox"> 2★ & above</label>
+            <label><input type="checkbox"> 1★ & above</label>
+          </div>
+
+          <hr>
+
+          <!-- Brands -->
+          <h3 class="filter-title">Brands</h3>
+          <div class="filter-box">
+            <label><input type="checkbox"> Festify Lights</label>
+            <label><input type="checkbox"> Festify Colors</label>
+            <label><input type="checkbox"> GlowCraft</label>
+            <label><input type="checkbox"> Festify Decor</label>
+          </div>
+
+          <button class="btn-outline full">Clear All Filters</button>
+
+        </div>
+      </aside>
+
+      <!-- ================= MAIN CONTENT ================= -->
+      <main class="main-content">
+
+        <!-- Header -->
+        <div class="top-bar">
+          <div>
+            <h2>All Products</h2>
+            <p class="muted">Browse all Festive Items</p>
+          </div>
+
+          <select class="sort-select">
+            <option>Most Popular</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Highest Rated</option>
+            <option>Newest First</option>
+          </select>
+        </div>
+
+        <!-- ================= PRODUCTS GRID ================= -->
+        <div class="product-grid">
+
+          <% products.forEach(product => { %>
+
+            <div class="product-card">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+
+              <div class="p-info">
+                <h4><%= product.name %></h4>
+                <p class="brand"><%= product.brand %></p>
+                <div class="price">₹<%= product.price %></div>
+
+                <a href="/product/<%= product.id %>">
+                  <button class="btn-primary">View Details</button>
+                </a>
+              </div>
+            </div>
+
+          <% }) %>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<%- include('partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festify Checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+
+<body>
+
+<!-- ================= PAGE WRAPPER ================= -->
+<div class="checkout-page">
+
+  <div class="container">
+
+    <h1 class="title">Checkout</h1>
+
+    <form id="checkout-form">
+
+      <div class="grid-layout">
+
+        <!-- ========== LEFT SECTION (ADDRESS + PAYMENT) ========== -->
+        <div class="left-column">
+
+          <!-- DELIVERY ADDRESS -->
+          <div class="card">
+            <h3>Delivery Address</h3>
+
+            <div class="two-grid">
+              <div>
+                <label>First Name</label>
+                <input type="text" placeholder="John" required />
+              </div>
+              <div>
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" required />
+              </div>
+            </div>
+
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com" required />
+
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 9876543210" required />
+
+            <label>Address</label>
+            <input type="text" placeholder="Street address" required />
+
+            <div class="two-grid">
+              <div>
+                <label>City</label>
+                <input type="text" placeholder="Mumbai" required />
+              </div>
+              <div>
+                <label>State</label>
+                <input type="text" placeholder="Maharashtra" required />
+              </div>
+            </div>
+
+            <div class="two-grid">
+              <div>
+                <label>Pincode</label>
+                <input type="text" placeholder="400001" required />
+              </div>
+              <div>
+                <label>Country</label>
+                <input type="text" value="India" readonly />
+              </div>
+            </div>
+          </div>
+
+          <!-- PAYMENT METHOD -->
+          <div class="card">
+            <h3>Payment Method</h3>
+
+            <div class="payment-options">
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card" checked />
+                <span>Credit / Debit Card</span>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="upi" />
+                <span>UPI</span>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" />
+                <span>Cash on Delivery</span>
+              </label>
+
+            </div>
+
+            <!-- CARD DETAILS -->
+            <div id="card-details" class="payment-section">
+              <label>Card Number</label>
+              <input type="text" placeholder="1234 5678 9012 3456" />
+
+              <div class="two-grid">
+                <div>
+                  <label>Expiry Date</label>
+                  <input type="text" placeholder="MM/YY" />
+                </div>
+                <div>
+                  <label>CVV</label>
+                  <input type="text" placeholder="123" />
+                </div>
+              </div>
+            </div>
+
+            <!-- UPI DETAILS -->
+            <div id="upi-details" class="payment-section hidden">
+              <label>UPI ID</label>
+              <input type="text" placeholder="yourname@upi" />
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ========== RIGHT COLUMN (ORDER SUMMARY) ========== -->
+        <div class="right-column">
+
+          <div class="card sticky-card">
+
+            <h3>Order Summary</h3>
+
+            <div class="items-list">
+              <div class="item">
+                <span>Example Product × 2</span>
+                <span>₹2,499</span>
+              </div>
+              <div class="item">
+                <span>Example Product 2 × 1</span>
+                <span>₹1,299</span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="price-line">
+              <span class="muted">Subtotal</span>
+              <span>₹3,798</span>
+            </div>
+
+            <div class="price-line">
+              <span class="muted">Delivery</span>
+              <span>FREE</span>
+            </div>
+
+            <div class="price-line green">
+              <span>Festival Discount</span>
+              <span>-₹379</span>
+            </div>
+
+            <hr />
+
+            <div class="total-line">
+              <span>Total</span>
+              <span class="big-price">₹3,419</span>
+            </div>
+
+            <button type="submit" class="btn primary w-full">
+              Place Order
+            </button>
+
+            <p class="terms">
+              By placing this order, you agree to our Terms & Conditions
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+    <!-- ========== ORDER SUCCESS MESSAGE (HIDDEN INITIALLY) ========== -->
+    <div id="success-message" class="success hidden">
+      <div class="success-icon"></div>
+
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you for shopping with Festify. Your order will be delivered soon.</p>
+
+      <button class="btn primary">View Order Details</button>
+      <button class="btn outline">Continue Shopping</button>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
