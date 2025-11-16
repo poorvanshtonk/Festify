@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festify | About Us</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /> 
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <%- include('partials/header') %>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <img src="/images/logo.jpeg" alt="Festify Logo" class="hero-logo">
+          <span>About Festify</span>
+        </div>
+
+        <h1>Making Every Festival <br> More Joyful</h1>
+
+        <p class="hero-text">
+          Festify is India's premier destination for festive shopping.
+          We curate the finest products to make your celebrations unforgettable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story">
+      <div class="container story-grid">
+        <div class="story-content">
+          <h2>Our Story</h2>
+
+          <p>
+            Founded in 2025, Festify was born from a simple idea: festivals should be 
+            celebrated with joy, not stress.
+          </p>
+
+          <p>
+            Our team set out to create a platform that would make festive shopping delightful.
+          </p>
+
+          <p>
+            Today, Festify serves thousands of happy customers across India.
+          </p>
+
+          <a href="/products" class="btn">Start Shopping</a>
+        </div>
+
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1710425809311-cf306c7dbeb3?w=1080" alt="Festival">
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values">
+      <div class="container">
+        <h2 class="center">Our Values</h2>
+        <p class="center subtext">The principles that guide everything we do</p>
+
+        <div class="values-grid">
+
+          <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+            <h3>Customer First</h3>
+            <p>Your happiness and satisfaction come first.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-award"></i></div>
+            <h3>Premium Quality</h3>
+            <p>Authentic products from trusted brands.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+            <h3>Festival Spirit</h3>
+            <p>Making every festival memorable.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+            <h3>Community</h3>
+            <p>Building a celebration community.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team">
+      <div class="container">
+        <h2 class="center">Meet Our Team</h2>
+        <p class="center subtext">Passionate people behind Festify</p>
+
+        <div class="team-grid">
+
+          <div class="team-card">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=priya" alt="">
+            <h4>Poorvansh Tonk</h4>
+            <p>Founder & CEO</p>
+          </div>
+
+          <div class="team-card">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=rahul" alt="">
+            <h4>XYZ</h4>
+            <p>Head of Products</p>
+          </div>
+
+          <div class="team-card">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ananya" alt="">
+            <h4>ABC</h4>
+            <p>Marketing Director</p>
+          </div>
+
+          <div class="team-card">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=vikram" alt="">
+            <h4>Chat GPT</h4>
+            <p>Operations Lead</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <h3>50K+</h3>
+          <p>Happy Customers</p>
+        </div>
+
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Premium Products</p>
+        </div>
+
+        <div class="stat">
+          <h3>100+</h3>
+          <p>Cities Served</p>
+        </div>
+
+        <div class="stat">
+          <h3>4.8★</h3>
+          <p>Average Rating</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="container">
+        <h2 class="center">Get In Touch</h2>
+        <p class="center subtext">We would love to hear from you</p>
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="icon-round"><i class="fa-solid fa-envelope"></i></div>
+            <h4>Email</h4>
+            <p>support@festify.com</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon-round"><i class="fa-solid fa-phone"></i></div>
+            <h4>Phone</h4>
+            <p>+91 1800-123-4567</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="icon-round"><i class="fa-solid fa-location-dot"></i></div>
+            <h4>Address</h4>
+            <p>Mumbai, India</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

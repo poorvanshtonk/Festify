@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festify | Login</title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+
+      <h2>Welcome to Festify</h2>
+
+      <form action="/login" method="POST">
+
+        <label>Email</label>
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="admin@festify.com" 
+          required
+        />
+
+        <label>Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="••••••••" 
+          required
+        />
+
+        <button class="login-btn" type="submit">
+          Login
+        </button>
+
+        <p class="demo-text">
+          Demo: Use admin@festify.com or john@example.com
+        </p>
+      </form>
+
+      <a href="/" class="guest-btn">Continue as Guest</a>
+
+    </div>
+  </div>
+
+</body>
+</html>

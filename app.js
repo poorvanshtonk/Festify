@@ -17,11 +17,12 @@ app.use(express.json());
 //  VIEW ENGINE SETUP (EJS)
 // ==========================
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // ==========================
 //  STATIC FILES SETUP
 // ==========================
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ==========================
 //  SESSION SETUP
@@ -35,12 +36,14 @@ app.use(
 );
 
 // ==========================
-//  GLOBAL CART COUNT (NAVBAR)
+//  GLOBAL CART COUNT / USER
 // ==========================
 app.use((req, res, next) => {
   res.locals.cartCount = req.session.cart
     ? req.session.cart.reduce((sum, item) => sum + item.quantity, 0)
     : 0;
+
+  res.locals.user = req.session.user || null;
   next();
 });
 
@@ -76,13 +79,53 @@ app.get('/', (req, res) => {
 });
 
 // --------------------------
+//  ABOUT PAGE
+// --------------------------
+app.get('/about', (req, res) => {
+  res.render('about', { currentFestival });
+});
+
+// --------------------------
+//  LOGIN PAGE
+// --------------------------
+app.get('/login', (req, res) => {
+  res.render('login', { currentFestival });
+});
+
+// --------------------------
+//  LOGIN SUBMIT (DEMO AUTH)
+// --------------------------
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  // Simple demo login (you can replace with DB later)
+  if (email === "admin@festify.com" && password === "admin") {
+    req.session.user = { name: "Admin User", email };
+    return res.redirect('/');
+  }
+
+  // Any other email accepted as demo
+  if (email.endsWith("@example.com") && password === "admin") {
+    req.session.user = { name: email.split("@")[0], email };
+    return res.redirect('/');
+  }
+
+  return res.redirect('/login');
+});
+
+// --------------------------
+//  LOGOUT
+// --------------------------
+app.get('/logout', (req, res) => {
+  req.session.user = null;
+  res.redirect('/');
+});
+
+// --------------------------
 //  PRODUCTS LISTING PAGE
 // --------------------------
 app.get('/products', (req, res) => {
-  res.render('products', {
-    products,
-    currentFestival
-  });
+  res.render('products', { products, currentFestival });
 });
 
 // --------------------------
@@ -96,10 +139,7 @@ app.get('/product/:id', (req, res) => {
     return res.status(404).send('Product not found');
   }
 
-  res.render('product_details', {
-    product,
-    currentFestival
-  });
+  res.render('product_details', { product, currentFestival });
 });
 
 // --------------------------
@@ -113,6 +153,7 @@ app.get('/admin', (req, res) => {
 //  PROFILE PAGE
 // --------------------------
 app.get('/profile', (req, res) => {
+  if (!req.session.user) return res.redirect('/login');
   res.render('profile', { currentFestival });
 });
 
@@ -191,9 +232,7 @@ app.post('/cart/update/:id', (req, res) => {
 app.get('/checkout', (req, res) => {
   const cart = req.session.cart || [];
 
-  if (cart.length === 0) {
-    return res.redirect('/cart');
-  }
+  if (cart.length === 0) return res.redirect('/cart');
 
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const deliveryFee = cartTotal > 999 ? 0 : 99;
